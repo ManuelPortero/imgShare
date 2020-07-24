@@ -1,14 +1,10 @@
-const express = require ('express');
-
+const express = require('express');
+//hola este es mi comentario
 const config = require('./server/config');
 
-//database
-require('./database'); 
+const app = config(express());
 
+app.listen(app.get('port'), () => {
+    console.log('Server on port', app.get('port'));
 
-const app = config(express()); 
-
-//starting the server
-app.listen(app.get('port'), ()=> {
-    console.log('Server listening on port', app.get('port')); 
-}); 
+});
