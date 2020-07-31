@@ -1,9 +1,13 @@
 const express = require('express');
-//hola este es mi comentario
+
 const config = require('./server/config');
+
+// database
+require('./database');
 
 const app = config(express());
 
+// Empezando servidor
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
 
